@@ -1,0 +1,17 @@
+/* Error: expected "{".
+ *   ,
+ * 1 | <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+ *   |                                                                                            ^
+ *   '
+ *   sass/mobile.css 1:92  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: expected \"{\".\a   \2577 \a 1 \2502  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />\a   \2502                                                                                             ^\a   \2575 \a   sass/mobile.css 1:92  root stylesheet";
+}

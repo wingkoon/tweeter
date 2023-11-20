@@ -1,0 +1,28 @@
+
+nav {
+    position: fixed;
+    height: 500px;
+    width: 100%;
+    background-color: #f1c40f;
+    color: #ffffffff;
+    padding: 25px;
+}
+
+.tweet-scroll {
+    float: right;
+    
+}
+
+
+.box1 {
+    font-family: Bungee;
+    font-size:xx-large;
+    margin-left: 1.5em;
+    margin-top: 300px;
+}
+
+i {
+    position:absolute;
+    color:red;
+    top: 65px; right: 160px;
+}
