@@ -52,46 +52,40 @@ $(document).ready(function() {
    return $tweet;
  };
 
- // Function for form validation
- const validateForm = function() {
-   const message = $('#tweet-text').val();
-   const $errMessage1 = $('.validation-message1');
-   const $errMessage2 = $('.validation-message2');
-
-   if (message === "" || message === null){
-     $errMessage1.slideDown();
-     $errMessage2.hide();
-     return false; // Return false to prevent form submission
-   } 
-   if (message.length > 140) {
-     $errMessage2.slideDown();
-     $errMessage1.hide();
-     return false; 
-   }
-
-   $errMessage1.hide();
-   $errMessage2.hide();
  
-   return true; // Return true if validation is successful
- }
-
  // Function to submit the form
  $('#myForm').on('submit', function(event) {
 
    event.preventDefault();
-   
-   if (validateForm()) {
-     // Serialize the form data
-     const tweet = $('#myForm').serialize();
+   const text = $('#tweet-text').val();
+   const $errMessage1 = $('.validation-message1');
+   const $errMessage2 = $('.validation-message2');
+
+   if (text === "" || text === null || text === " ") {
+    $errMessage1.slideDown();
+    $errMessage2.hide();
+    return false; 
+  } 
+
+  if (text.length > 140) {
+    $errMessage2.slideDown();
+     $errMessage1.hide();
+     return false; 
+  }
+  
+  const tweet = $('#myForm').serialize();
      console.log($(this).serialize());
 
-     $.post("/tweets", tweet).then($loadTweets)      
-     
-     $("#tweet-text").val(" "); // clear the text after submitting the form
-     $(".new-tweet .counter").text(140); // reset the counter to 140 chars after submitting the form
-     
-   }
- });
+     $.post("/tweets", tweet).then($loadTweets) 
+    .done(function () {
+      $("#tweet-text").val("");
+      $(".counter").val("140");
+      renderTweets();
+    })
+    .fail(function (error) {
+      alert(`ERROR: ${error}`);
+    });
+});
 
  // Function to load tweets
  const $loadTweets = function(tweet) {      
@@ -107,31 +101,26 @@ $(document).ready(function() {
   $("#myForm").toggle();
 });
 
-/*
 $(window).on("scroll", function () {
   if ($(window).scrollTop() === 0) {
     $("#button-fix").hide();
     $("nav").show();
-    $("header").togo();
-    $("#myForm").hide();
-    $("#tweet-container").show();
+    $("header").show();
   } else {
     $("#button-fix").show();
-    $("nav").show();
-    $("header").show();
-    $("#myForm").show();
-    $("#tweet-container").show();
+    $("nav").hide();
+    $("header").hide();
   }
 });
 
-  $("#button-fix").on("click", function () {
+$("#button-fix").on("click", function () {
   $("html, body").animate({ scrollTop: 0 }, "slow");
   $("nav").show();
   $("header").show();
   $("#myForm").show();
-  $("#tweet-container").show();
+  $("#tweet-container").focus();
 });
-*/
+
 
  $loadTweets();
  
