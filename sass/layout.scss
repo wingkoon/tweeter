@@ -3,6 +3,9 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+$font-family: 'Source Sans 3', sans-serif;
+
 html {
   box-sizing: border-box;
 }
@@ -18,17 +21,20 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font: "Source Sans 3";
-  
+  font-family: $font-family;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-header {
-  height: 400px;
-  width: 1500px;
-  box-sizing: inherit;
+.tweeter-logo {
+  font-family: 'Bungee', sans-serif;
 }
 
- 
+main {
+  /* width: 90%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f1ec;
+  margin: 0 auto;
+}
+
+
