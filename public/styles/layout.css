@@ -25,6 +25,20 @@ body {
   font-family: "Bungee", sans-serif;
 }
 
+#button-fix {
+  border-radius: 64px;
+  padding: 30px;
+  background-color: red;
+  color: white;
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  display: none;
+}
+
 main {
   /* width: 90%; */
   display: flex;

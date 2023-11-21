@@ -14,10 +14,10 @@ $(document).ready(function() {
 
  const renderTweets = function(tweets) {
    // loops through tweets
-   for (const tweet of tweets) {
+  for (const tweet of tweets) {
      $('#tweets-container').prepend(createTweetElement(tweet));
    }
- }
+ };
 
  // Define an escape function to safely escape HTML content
  const escape = function(str) {
