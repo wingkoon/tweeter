@@ -1,10 +1,21 @@
 ![Tweeter Logo](/assets/tweeter-logo.png)
-
+By Wing Koon, Kevin Leung
 
 # Tweeter Project
 
-This single-page application (SPA) project is a Twitter clone designed to enable users to post tweets with a maximum limit of 140 characters. It places a strong emphasis on front-end development, utilizing jQuery, AJAX, and vanilla JavaScript to handle asynchronous requests for posting and retrieving tweets. In addition, it applies SASS for improved CSS maintainability and incorporates responsive design principles to ensure a seamless user experience across a range of devices, including mobile, tablet, and desktop.
 
+Tweeter is a simple, single-page social media app Twitter clone designed to enable users to post tweets with a maximum limit of 140 characters.
+
+This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
+
+It places a strong emphasis on front-end development, utilizing jQuery, AJAX, and vanilla JavaScript to handle asynchronous requests for posting and retrieving tweets.
+
+## Technologies Used
+- HTML5
+- CSS3 (with a focus on Flexbox and Media Queries for responsive design)
+- JavaScript (jQuery)
+- AJAX for asynchronous data handling
+- Node.js and Express (for backend server functionality)
 
 ## Getting Started
 
@@ -15,16 +26,42 @@ This single-page application (SPA) project is a Twitter clone designed to enable
 4. Go to <http://localhost:8080/> in your browser.
 
 
+1. Download the software.
+
+git clone git@github.com:wingkoon/tinyapp.git
+
+2. Prepare for the dependency.
+
+- Go to the directory /tinyapp
+- Install all dependencies (using the `npm install` command).
+i.e.,       
+    npm install
+    npm install bcryptjs
+    npm install cookie-session
+
+3. Run your node server.
+
+- Run the development web server using the `npm run start` command.
+
+4. Browse to `http://localhost:8080/`
+
+
+- Enjoy all its features
+
+
+
+
+
 ## Preview
 
 ### UI on Mobile Devices ###  
-![UI on Mobile Devices](/assets/UI-mobile.png)
+![UI on Mobile Devices](/)
 
 ### UI on Tablet Devices ###
-![UI on Tablet Devices](/assets/UI-tablet.png)
+![UI on Tablet Devices](/)
 
 ### UI on Desktop Devices ###
-![UI on Desktop Devices](/assets/UI-desktop.png)
+![UI on Desktop Devices](/)
 
 
 ## Dependencies
