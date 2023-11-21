@@ -14,7 +14,7 @@ textarea {
   border-bottom: 3px solid #545149;
   padding-top: 15px;
   background-color: transparent;
-  color: #545149;
+  color: #050505;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
   font-size: 22px;
@@ -50,10 +50,11 @@ div .counter {
 article {
   margin-top: 5px;
   width: 100%;
-  border: 3px solid #545149;
+  border: 3px solid #35332f;
   padding: 5px;
   padding-top: 0;
   padding-bottom: 0;
+  color:#050505;
 }
 
 .tweet-article-header {
@@ -75,7 +76,7 @@ article {
 }
 
 .username {
-  color: #c6cfe7;
+  color: #050505;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 300;
   margin-left: auto;
@@ -83,13 +84,14 @@ article {
 }
 
 .name {
+  color: #050505;
   font-family: "Source Sans 3", sans-serif;
   font-weight: 300;
   align-self: center;
 }
 
 .text {
-  border-bottom: 3px solid #545149;
+  border-bottom: 3px solid #121111;
   padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -106,9 +108,12 @@ footer {
   justify-content: space-between;
   align-items: baseline;
   padding-left: 10px;
+  color:#060606
 }
 
 .timeStamp {
+  color:#060606;
+  font-style: bold;
   font-size: 14px;
   font-family: "Source Sans 3", sans-serif;
 }
