@@ -3,12 +3,10 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-
-$font-family: 'Source Sans 3', sans-serif;
-
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -16,16 +14,29 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: $font-family;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 .tweeter-logo {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
+}
+
+#button-fix {
+  border-radius: 64px;
+  padding: 30px;
+  background-color: red;
+  color: white;
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  display: none;
 }
 
 main {
@@ -36,5 +47,3 @@ main {
   background-color: #f4f1ec;
   margin: 0 auto;
 }
-
-

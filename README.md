@@ -6,9 +6,12 @@ By Wing Koon, Kevin Leung
 
 Tweeter is a simple, single-page social media app Twitter clone designed to enable users to post tweets with a maximum limit of 140 characters.
 
+All the requests will be made asynchronously, which will allow us to gain familiarity using the jQuery library to make these requests.
+
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
 It places a strong emphasis on front-end development, utilizing jQuery, AJAX, and vanilla JavaScript to handle asynchronous requests for posting and retrieving tweets.
+
 
 ## Technologies Used
 - HTML5
@@ -17,18 +20,19 @@ It places a strong emphasis on front-end development, utilizing jQuery, AJAX, an
 - AJAX for asynchronous data handling
 - Node.js and Express (for backend server functionality)
 
+## Dependencies
+
+- Express
+- Node.js
+- Body-parser
+- Chance
+
+
 ## Getting Started
-
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
-
 
 1. Download the software.
 
-git clone git@github.com:wingkoon/tinyapp.git
+https://github.com/wingkoon/tweeter.git
 
 2. Prepare for the dependency.
 
@@ -36,8 +40,6 @@ git clone git@github.com:wingkoon/tinyapp.git
 - Install all dependencies (using the `npm install` command).
 i.e.,       
     npm install
-    npm install bcryptjs
-    npm install cookie-session
 
 3. Run your node server.
 
@@ -49,24 +51,14 @@ i.e.,
 - Enjoy all its features
 
 
-
-
-
 ## Preview
 
-### UI on Mobile Devices ###  
-![UI on Mobile Devices](/)
-
-### UI on Tablet Devices ###
-![UI on Tablet Devices](/)
-
-### UI on Desktop Devices ###
-![UI on Desktop Devices](/)
+![Tweeter](/assets/tweeter_screen.jpg)
 
 
-## Dependencies
 
-- Express
-- Node 5.10.x or above
-- Body-parser
-- Chance
+
+
+
+
+

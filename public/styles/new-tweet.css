@@ -44,7 +44,7 @@ div .counter {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 article {
@@ -54,7 +54,7 @@ article {
   padding: 5px;
   padding-top: 0;
   padding-bottom: 0;
-  color:#050505;
+  color: #050505;
 }
 
 .tweet-article-header {
@@ -108,11 +108,11 @@ footer {
   justify-content: space-between;
   align-items: baseline;
   padding-left: 10px;
-  color:#060606
+  color: #060606;
 }
 
 .timeStamp {
-  color:#060606;
+  color: #060606;
   font-style: bold;
   font-size: 14px;
   font-family: "Source Sans 3", sans-serif;

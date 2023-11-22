@@ -1,24 +1,21 @@
-$font-family: 'Source Sans 3', sans-serif;
-
-
 .new-tweet {
-  width: 100%; 
-  margin: 0 auto; 
+  width: 100%;
+  margin: 0 auto;
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
-  
+
 textarea {
   align-items: center;
   min-height: 50px;
   min-width: 100%;
   border: none;
-  border-bottom: 3px solid #545149; 
+  border-bottom: 3px solid #545149;
   padding-top: 15px;
   background-color: transparent;
-  color: #545149;
-  font-family: $font-family;
+  color: #050505;
+  font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
   font-size: 22px;
   padding-left: 10px;
@@ -28,35 +25,36 @@ textarea {
 div {
   display: flex;
   justify-content: space-between;
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
 }
 
 div button {
   padding: 10px 20px; /* Adjust padding as needed */
-  background-color: #4056A1; 
+  background-color: #4056A1;
   color: white;
-  border: none; 
+  border: none;
   cursor: pointer;
 }
 
 div .counter {
-  color: #545149; 
+  color: #545149;
 }
 
 #tweets-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-
-}
-article {
-  margin-top: 30px;
   width: 90%;
-  border: 3px solid  #545149;
-  padding: 20px;
+}
+
+article {
+  margin-top: 5px;
+  width: 100%;
+  border: 3px solid #35332f;
+  padding: 5px;
   padding-top: 0;
   padding-bottom: 0;
+  color:#050505;
 }
 
 .tweet-article-header {
@@ -71,35 +69,35 @@ article {
 }
 
 .author-image {
-  width: 40px; 
+  width: 40px;
   height: 40px;
   margin-right: 10px;
   margin-top: 0;
 }
 
 .username {
-  color: #c6cfe7;
-  font-family: $font-family;
+  color: #050505;
+  font-family: "Source Sans 3", sans-serif;
   font-weight: 300;
   margin-left: auto;
   align-self: center;
 }
 
 .name {
-  font-family: $font-family;
+  color: #050505;
+  font-family: "Source Sans 3", sans-serif;
   font-weight: 300;
   align-self: center;
 }
 
-
 .text {
-  border-bottom: 3px solid #545149; 
-  padding-bottom: 20px;
+  border-bottom: 3px solid #121111;
+  padding-bottom: 5px;
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 0.5px;
   margin-top: 5px;
-  font-family: $font-family;
+  font-family: "Source Sans 3", sans-serif;
   font-weight: 400;
   font-size: 22px;
 }
@@ -110,11 +108,14 @@ footer {
   justify-content: space-between;
   align-items: baseline;
   padding-left: 10px;
+  color:#060606
 }
 
 .timeStamp {
+  color:#060606;
+  font-style: bold;
   font-size: 14px;
-  font-family: $font-family;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 .icon i {
@@ -132,21 +133,19 @@ article .icon i:hover {
   color: #c7a620;
 }
 
-
 .validation-message1, .validation-message2 {
-  display: none; 
+  display: none;
   background-color: #f4f1ec;
   border-color: #c51244 !important;
   border: 3px solid #fcc2c3;
-  margin-bottom: 25px;
-  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
   float: left;
   padding: 0px 20px;
   color: #cc0033;
-  font-family: $font-family;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 20px;
   font-weight: bold;
   line-height: 20px;
-  text-shadow: 1px 1px rgba(250,250,250,.3);
+  text-shadow: 1px 1px rgba(250, 250, 250, 0.3);
 }
-
