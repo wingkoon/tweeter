@@ -55,12 +55,6 @@
     <main class="container">
       <section class="new-tweet">
 
-        <div class="validation-message1">
-          <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 
-            Tweet is empty. Please enter a tweet. <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-          </p>          
-        </div>
-
         <div class="validation-message2">
           <p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 
             Tweet is too long (max 140 characters). <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -69,7 +63,7 @@
 
         <form action="/tweets" method="POST" id="myForm">
           <label for="tweet-text"></label>
-          <textarea name="text" id="tweet-text" wrap="soft" placeholder="What are you humming about?"></textarea>
+          <textarea name="text" id="tweet-text" wrap="soft" placeholder="What are you humming about?" required></textarea>
           <div>
             <button class="tweet-button" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -77,8 +71,8 @@
         </form>
       </section>
 
-      <div id='tweets-container'></div>
-      
+      <section id="section-article"> <div id='tweets-container'></div>
+      </section>
     </main>
 
   </body>

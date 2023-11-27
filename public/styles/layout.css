@@ -45,3 +45,8 @@ main {
   background-color: #f4f1ec;
   margin: 0 auto;
 }
+
+#section-article {
+  overflow: scroll;
+  height: 500px;
+}

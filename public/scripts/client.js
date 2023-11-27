@@ -58,21 +58,19 @@ $(document).ready(function() {
 
    event.preventDefault();
    const text = $('#tweet-text').val();
-   const $errMessage1 = $('.validation-message1');
    const $errMessage2 = $('.validation-message2');
-
-   if (text === "" || text === null || text === " ") {
-    $errMessage1.slideDown();
-    $errMessage2.hide();
-    return false; 
-  } 
 
   if (text.length > 140) {
     $errMessage2.slideDown();
      $errMessage1.hide();
      return false; 
   }
-  
+  if (text.length <= 140) {
+    $errMessage2.hide();
+     $errMessage1.hide();
+     return true; 
+  }
+
   const tweet = $('#myForm').serialize();
      console.log($(this).serialize());
 
@@ -108,7 +106,7 @@ $(window).on("scroll", function () {
     $("header").show();
   } else {
     $("#button-fix").show();
-    $("nav").hide();
+    $("nav").show();
     $("header").hide();
   }
 });
