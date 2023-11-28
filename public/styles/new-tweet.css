@@ -126,7 +126,7 @@ footer {
 
 /* Apply box-shadow and icon color changes on hover */
 article:hover {
-  box-shadow: 5px 5px 0 #c6cfe7;
+  box-shadow: 6px 6px 0 #323335;
 }
 
 article .icon i:hover {

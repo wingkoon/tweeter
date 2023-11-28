@@ -7,119 +7,116 @@
 $(document).ready(function() {
 
   // Display the time passed since a tweet
- const timeStamp = function(timestamp) {
-   return timeago.format(timestamp); 
- };
+  const timeStamp = function(timestamp) {
+    return timeago.format(timestamp);
+  };
 
+  const renderTweets = function(tweets) {
+    // loops through tweets
+    $("#tweets-container").html("");
+    for (const tweet of tweets) {
+      $('#tweets-container').prepend(createTweetElement(tweet));
+    }
+  };
 
- const renderTweets = function(tweets) {
-   // loops through tweets
-  for (const tweet of tweets) {
-     $('#tweets-container').prepend(createTweetElement(tweet));
-   }
- };
+  // Define an escape function to safely escape HTML content
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
- // Define an escape function to safely escape HTML content
- const escape = function(str) {
-   let div = document.createElement("div");
-   div.appendChild(document.createTextNode(str));
-   return div.innerHTML;
- };
-
-
- const createTweetElement = function(tweet) {
-   const $tweet = $(`
-     <article>
-       <header class="tweet-article-header">
-         <div class="header-content">
-           <img src="${(tweet.user.avatars)}" alt="Author's Image" class="author-image">
-           <h4 class="name">${(tweet.user.name)}</h4>
-         </div>
+  const createTweetElement = function(tweet) {
+    const $tweet = $(`
+      <article>
+      <header class="tweet-article-header">
+        <div class="header-content">
+          <img src="${(tweet.user.avatars)}" alt="Author's Image" class="author-image">
+          <h4 class="name">${(tweet.user.name)}</h4>
+        </div>
          <h4 class="username">${(tweet.user.handle)}</h4>
-       </header>
-       <p class="text">${escape(tweet.content.text)}</p>
-       <footer>
-       <p class="timeStamp">${timeStamp(tweet.created_at)}</p>
-       <div class="icon">
-         <i class="fa-solid fa-flag"></i>
-         <i class="fa-solid fa-retweet"></i>
-         <i class="fa-solid fa-heart"></i>
-       </div>
-       </footer>
-     </article>
+      </header>
+      <p class="text">${escape(tweet.content.text)}</p>
+      <footer>
+      <p class="timeStamp">${timeStamp(tweet.created_at)}</p>
+      <div class="icon">
+        <i class="fa-solid fa-flag"></i>
+        <i class="fa-solid fa-retweet"></i>
+        <i class="fa-solid fa-heart"></i>
+      </div>
+      </footer>
+      </article>
    `);
 
-   return $tweet;
- };
+    return $tweet;
+  };
 
  
- // Function to submit the form
- $('#myForm').on('submit', function(event) {
+  // Function to submit the form
+  $('#myForm').on('submit', function(event) {
+    event.preventDefault();
+    const text = $('#tweet-text').val();
 
-   event.preventDefault();
-   const text = $('#tweet-text').val();
-   const $errMessage2 = $('.validation-message2');
+    const $errMessage2 = $('.validation-message2');
 
-  if (text.length > 140) {
-    $errMessage2.slideDown();
-     $errMessage1.hide();
-     return false; 
-  }
-  if (text.length <= 140) {
-    $errMessage2.hide();
-     $errMessage1.hide();
-     return true; 
-  }
+    if (text.length > 140) {
+      $errMessage2.slideDown();
+      return false;
+    }
 
-  const tweet = $('#myForm').serialize();
-     console.log($(this).serialize());
+    const tweet = $('#myForm').serialize();
 
-     $.post("/tweets", tweet).then($loadTweets) 
-    .done(function () {
-      $("#tweet-text").val("");
-      $(".counter").val("140");
-      renderTweets();
+    //Post new treet to /tweets
+    $.post("/tweets", tweet).then($loadTweets)
+      .done(function() {
+        $("#tweet-text").val("");
+        $(".counter").val("140");
+        $errMessage2.hide();
+      })
+      .fail(function(error) {
+        alert(`ERROR: ${error}`);
+      });
+  });
+
+  // Function to load tweets
+  const $loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: "json",
     })
-    .fail(function (error) {
-      alert(`ERROR: ${error}`);
-    });
-});
+      .then(renderTweets)
+      .catch(error => console.log("Error: ", error));
+  };
 
- // Function to load tweets
- const $loadTweets = function(tweet) {      
-   $.ajax({
-     url: '/tweets',
-     method: 'GET',
-   })
-   .then(renderTweets)
-   .catch(error => console.log("Error: ", error)); 
- }
+  $("#nav-right").click(function() {
+    $("#myForm").toggle();
+  });
 
- $("#nav-right").click(function () {
-  $("#myForm").toggle();
-});
+  //window scroll setting
+  $(window).on("scroll", function() {
+    if ($(window).scrollTop() === 0) {
+      $("#button-fix").hide();
+      $("nav").show();
+    } else {
+      $("#button-fix").show();
+      $("nav").show();
+    }
+  });
 
-$(window).on("scroll", function () {
-  if ($(window).scrollTop() === 0) {
-    $("#button-fix").hide();
+  //back to top button
+  $("#button-fix").on("click", function() {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
     $("nav").show();
     $("header").show();
-  } else {
-    $("#button-fix").show();
-    $("nav").show();
-    $("header").hide();
-  }
-});
-
-$("#button-fix").on("click", function () {
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-  $("nav").show();
-  $("header").show();
-  $("#myForm").show();
-  $("#tweet-container").focus();
-});
+    $("#myForm").show();
+    $("#tweet-container").focus();
+  });
 
 
- $loadTweets();
+  $loadTweets();
  
+
 });
+
+

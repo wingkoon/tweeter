@@ -19,6 +19,7 @@ It places a strong emphasis on front-end development, utilizing jQuery, AJAX, an
 - JavaScript (jQuery)
 - AJAX for asynchronous data handling
 - Node.js and Express (for backend server functionality)
+- REACT for frontend implementation
 
 ## Dependencies
 

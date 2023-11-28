@@ -43,13 +43,15 @@
     </nav>
 
     <header class="tweet-header">
+      
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
       <div>
           <p><b>Kevin Leung</b></p>
       </div>
-    </header>
+      
+    </header>   
 
     <!-- Page-specific (main) content here -->
     <main class="container">
@@ -62,10 +64,9 @@
         </div>
 
         <form action="/tweets" method="POST" id="myForm">
-          <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" wrap="soft" placeholder="What are you humming about?" required></textarea>
           <div>
-            <button class="tweet-button" type="submit">Tweet</button>
+            <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
