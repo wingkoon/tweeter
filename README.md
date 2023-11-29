@@ -57,7 +57,14 @@ i.e.,
 ![Tweeter](/assets/tweeter_screen.jpg)
 
 
-
+## Javascript functionality
+* Click the compose button to write a tweet.
+* While typing, the remaining character count will be displayed to the user with its color changing when it turns negative.
+* Upon submission, the new tweet will be checked for adequate length (non-empty, not longer than 140 characters) and an appropriate error message will display if the validation fails.
+* Each tweet is recorded with content, avatar, name, handle and timestamp.
+* Upon successful submission, the tweet list will reload.
+* Tweet submission and tweet loading is implemented using AJAX.
+* A scroll button is implemented to quickly return to the top.
 
 
 
