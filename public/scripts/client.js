@@ -66,7 +66,7 @@ $(document).ready(function() {
 
     const tweet = $('#myForm').serialize();
 
-    //Post new treet to /tweets
+    //Post new treet to /tweets and then update all the tweets by passing to Get through $loadTweets
     $.post("/tweets", tweet).then($loadTweets)
       .done(function() {
         $("#tweet-text").val("");
